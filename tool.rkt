@@ -50,7 +50,7 @@
       (define last (send this last-paragraph))
       (define last-nonempty (send this last-non-empty-paragraph))
 
-      (when (< last-nonempty last)
+      (when (and last-nonempty (< last-nonempty last))
         (send this
               delete
               (send this paragraph-start-position (add1 last-nonempty))
